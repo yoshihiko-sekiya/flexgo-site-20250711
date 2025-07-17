@@ -1,22 +1,1701 @@
-<!DOCTYPE html><html><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FLEX GO. - 軽貨物配送サービス</title>
-<style>@import"https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap";:root{--primary:#00a3ff;--primary-dark:#0080d4;--bg:#fff;--bg-alt:#f6f8fa;--shadow:0 8px 24px rgba(0,0,0,.08);--radius:20px}*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:#222;font-family:Noto Sans JP,sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}section{padding:110px 8vw}section.alt{background:var(--bg-alt)}.section-title{font-size:2.2rem;font-weight:900;margin-bottom:80px;position:relative;text-align:center}.section-title:after{background:var(--primary);border-radius:2px;content:"";display:block;height:4px;margin:24px auto 0;width:100px}.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:40px}.card,.hero{text-align:center}.hero{align-items:center;background:linear-gradient(135deg,var(--primary) 0,var(--primary-dark) 100%);clip-path:polygon(0 0,100% 0,100% 82%,0 100%);color:#fff;display:flex;height:100vh;justify-content:center;padding:0}.hero .cta{background:#fff;border-radius:4px;box-shadow:var(--shadow);color:var(--primary-dark);display:inline-block;font-weight:900;margin-top:2.6rem;padding:18px 46px}</style>
-<style>[data-vgsap-from-invisible=true]:not([data-vgsap-stagger=true]),[data-vgsap-from-invisible=true][data-vgsap-stagger=true]>*{opacity:0}</style>
-<style>.hero[data-v-5fbc8fae]{clip-path:polygon(0 0,100% 0,100% 85%,0 100%);height:100vh;padding:0;position:relative}.bg[data-v-5fbc8fae]{filter:brightness(.55);height:100%;top:0;right:0;bottom:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center;position:absolute;width:100%}.content[data-v-5fbc8fae]{align-items:center;color:#fff;display:flex;flex-direction:column;height:100%;justify-content:center;position:relative;text-align:center;z-index:1}h2[data-v-5fbc8fae]{font-size:clamp(2.4rem,6vw,4rem);line-height:1.2;margin-bottom:1rem}.cta[data-v-5fbc8fae],h2[data-v-5fbc8fae]{font-weight:900}.cta[data-v-5fbc8fae]{background:#fff;border-radius:4px;color:#1d8fa2;display:inline-block;margin-top:2rem;padding:14px 40px}</style>
-<style>.grid[data-v-7721d686]{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:0 auto;max-width:1100px}article[data-v-7721d686]{background:#fff;border-radius:10px;box-shadow:0 4px 12px #0000000f;overflow:hidden;text-align:center}img[data-v-7721d686]{height:180px;-o-object-fit:cover;object-fit:cover;width:100%}h4[data-v-7721d686]{font-size:1.1rem;font-weight:700;margin:14px 0 8px}p[data-v-7721d686]{font-size:.9rem;padding:0 14px 20px}</style>
-<style>.alt[data-v-aa319f84]{background:var(--bg)}.grid[data-v-aa319f84]{display:grid;gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:0 auto;max-width:1100px}article[data-v-aa319f84]{background:#fff;border-radius:10px;box-shadow:0 4px 12px #0000000f;overflow:hidden;text-align:center}img[data-v-aa319f84]{height:180px;-o-object-fit:cover;object-fit:cover;width:100%}h4[data-v-aa319f84]{font-size:1.1rem;font-weight:700;margin:14px 0 8px}ul[data-v-aa319f84]{list-style:disc;margin:0 0 12px;padding:0 0 0 20px;text-align:left}.price[data-v-aa319f84]{color:var(--primary-dark);font-size:1.6rem;font-weight:900;margin:0 0 20px}</style>
-<style>.contact-container[data-v-23031a08]{display:grid;gap:50px;grid-template-columns:1fr 1fr;margin:0 auto;max-width:1000px}.contact-info h4[data-v-23031a08]{color:var(--primary-dark);font-size:1.4rem;font-weight:700;margin-bottom:20px}.contact-info p[data-v-23031a08]{font-size:1.1rem;margin-bottom:15px}.contact-form[data-v-23031a08]{background:var(--light);border-radius:10px;box-shadow:0 4px 10px #0000000d;padding:40px}.form-group[data-v-23031a08]{margin-bottom:20px}.form-group label[data-v-23031a08]{color:var(--text);display:block;font-weight:600;margin-bottom:8px}.form-group input[data-v-23031a08],.form-group textarea[data-v-23031a08]{border:1px solid #ddd;border-radius:5px;font-size:1rem;padding:12px;transition:border-color .3s;width:100%}.form-group input[data-v-23031a08]:focus,.form-group textarea[data-v-23031a08]:focus{border-color:var(--primary);outline:none}.submit-btn[data-v-23031a08]{background:var(--primary);border:none;border-radius:5px;color:var(--light);cursor:pointer;font-size:1.1rem;font-weight:700;padding:15px;transition:background-color .3s;width:100%}.submit-btn[data-v-23031a08]:hover{background:var(--primary-dark)}@media (max-width:768px){.contact-container[data-v-23031a08]{gap:30px;grid-template-columns:1fr}.contact-form[data-v-23031a08]{padding:30px 20px}}</style>
-<link rel="stylesheet" href="/_nuxt/index.sRzIznN1.css" crossorigin>
-<link rel="preload" as="fetch" crossorigin="anonymous" href="/_payload.json?8b1561d2-f5f5-493d-9818-475d1b5eae73">
-<link rel="modulepreload" as="script" crossorigin href="/_nuxt/BjQQPEU-.js">
-<link rel="modulepreload" as="script" crossorigin href="/_nuxt/CIpvjXrS.js">
-<link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" href="/_nuxt/builds/meta/8b1561d2-f5f5-493d-9818-475d1b5eae73.json">
-<link rel="prefetch" as="style" crossorigin href="/_nuxt/default.D5M53O3b.css">
-<link rel="prefetch" as="script" crossorigin href="/_nuxt/CH7KZQnB.js">
-<link rel="prefetch" as="script" crossorigin href="/_nuxt/DPsdgnxo.js">
-<link rel="prefetch" as="script" crossorigin href="/_nuxt/om1szd0T.js">
-<link rel="prefetch" as="script" crossorigin href="/_nuxt/5UAJF7Q3.js">
-<meta name="description" content="軽貨物配送にフレキシブルな選択肢を。FLEX GO.は迅速で信頼性の高い配送サービスを提供します。">
-<script type="module" src="/_nuxt/BjQQPEU-.js" crossorigin></script></head><body><div id="__nuxt"><div><div></div><div><section class="hero" data-v-5fbc8fae><video class="bg" src="https://player.vimeo.com/progressive_redirect/playback/735584010/rendition/720p/file.mp4?loc=external&amp;signature=138c4ac..." muted playsinline autoplay loop data-v-5fbc8fae></video><div class="content" data-v-5fbc8fae><h2 data-v-5fbc8fae>もっと柔軟に行こう。<br data-v-5fbc8fae>FLEX GO.</h2><p data-v-5fbc8fae>軽貨物配送にフレキシブルな選択肢を。</p><a href="#contact" class="cta" data-v-5fbc8fae>無料見積もり</a></div></section><section id="features" data-v-7721d686><h3 class="section-title" data-v-7721d686>選ばれる理由</h3><div class="grid" data-v-7721d686><!--[--><article data-v-7721d686><img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1200" alt="全国ネットワーク" data-v-7721d686><h4 data-v-7721d686>全国ネットワーク</h4><p data-v-7721d686>迅速・確実にお届け</p></article><article data-v-7721d686><img src="https://images.unsplash.com/photo-1596075780556-fd44a4e3a251?w=1200" alt="365日対応" data-v-7721d686><h4 data-v-7721d686>365日対応</h4><p data-v-7721d686>いつでもご要望に対応</p></article><article data-v-7721d686><img src="https://images.unsplash.com/photo-1584212245460-2b58f575a720?w=1200" alt="リアルタイム追跡" data-v-7721d686><h4 data-v-7721d686>リアルタイム追跡</h4><p data-v-7721d686>荷物位置を即確認</p></article><!--]--></div></section><section id="services" class="alt" data-v-aa319f84><h3 class="section-title" data-v-aa319f84>サービス</h3><div class="grid" data-v-aa319f84><!--[--><article data-v-aa319f84><img src="https://images.unsplash.com/photo-1619785299441-39fabc3be1ac?w=1200" alt="定期便" data-v-aa319f84><h4 data-v-aa319f84>定期便</h4><ul data-v-aa319f84><!--[--><li data-v-aa319f84>毎日ルート</li><li data-v-aa319f84>ドライバー固定</li><li data-v-aa319f84>月額割引</li><!--]--></ul><p class="price" data-v-aa319f84>¥3,000〜 / 回</p></article><article data-v-aa319f84><img src="https://images.unsplash.com/photo-1516302350523-a23c1e40c4ad?w=1200" alt="スポット便" data-v-aa319f84><h4 data-v-aa319f84>スポット便</h4><ul data-v-aa319f84><!--[--><li data-v-aa319f84>単発利用</li><li data-v-aa319f84>即日予約</li><li data-v-aa319f84>全国対応</li><!--]--></ul><p class="price" data-v-aa319f84>¥4,000〜 / 回</p></article><article data-v-aa319f84><img src="https://images.unsplash.com/photo-1602316608205-0849fe9e44fc?w=1200" alt="緊急チャーター" data-v-aa319f84><h4 data-v-aa319f84>緊急チャーター</h4><ul data-v-aa319f84><!--[--><li data-v-aa319f84>60分集荷</li><li data-v-aa319f84>貸切輸送</li><li data-v-aa319f84>24h受付</li><!--]--></ul><p class="price" data-v-aa319f84>¥8,000〜 / 回</p></article><!--]--></div></section><section id="contact" data-v-23031a08><h3 class="section-title" data-v-23031a08>お問い合わせ</h3><div class="contact-container" data-v-23031a08><div class="contact-info" data-v-23031a08><h4 data-v-23031a08>お気軽にお問い合わせください</h4><p data-v-23031a08>📞 <strong data-v-23031a08>TEL:</strong> 03-XXXX-XXXX</p><p data-v-23031a08>📧 <strong data-v-23031a08>Email:</strong> info@flexgo.co.jp</p><p data-v-23031a08>🕐 <strong data-v-23031a08>受付時間:</strong> 平日 9:00-18:00</p></div><form class="contact-form" data-v-23031a08><div class="form-group" data-v-23031a08><label for="name" data-v-23031a08>お名前 *</label><input type="text" id="name" value="" required data-v-23031a08></div><div class="form-group" data-v-23031a08><label for="email" data-v-23031a08>メールアドレス *</label><input type="email" id="email" value="" required data-v-23031a08></div><div class="form-group" data-v-23031a08><label for="phone" data-v-23031a08>電話番号</label><input type="tel" id="phone" value="" data-v-23031a08></div><div class="form-group" data-v-23031a08><label for="message" data-v-23031a08>お問い合わせ内容 *</label><textarea id="message" rows="5" required data-v-23031a08></textarea></div><button type="submit" class="submit-btn" data-v-23031a08>送信する</button></form></div></section></div></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/_payload.json?8b1561d2-f5f5-493d-9818-475d1b5eae73">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"prerenderedAt":8},["Reactive",2],{},["Set"],["ShallowReactive",5],{},true,"/",1752196673653]</script>
-<script>window.__NUXT__={};window.__NUXT__.config={public:{vgsap:{}},app:{baseURL:"/",buildId:"8b1561d2-f5f5-493d-9818-475d1b5eae73",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLEX GO. | 究極のアニメーション体験</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #FF6B00;
+  --secondary: #00A8FF;
+  --dark: #0A0A23;
+  --light: #F5F5F7;
+  --accent: #FFD700;
+  --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --purple: #8B5CF6;
+  --green: #10B981;
+  --pink: #EC4899;
+  --cyan: #06B6D4;
+  --red: #EF4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  background: var(--dark);
+  color: var(--light);
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ===== PRELOADER ===== */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0A0A23 0%, #1a1a3e 50%, #2a2a4e 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.preloader-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== LOGO ANIMATION CONTAINER ===== */
+.logo-container {
+  position: relative;
+  height: 200px;
+  width: 600px;
+  margin-bottom: 50px;
+  overflow: visible;
+}
+
+.logo-letter {
+  position: absolute;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 900;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.05em;
+  opacity: 0;
+  filter: drop-shadow(0 0 20px currentColor);
+  transition: all 0.3s ease;
+}
+
+.logo-letter.f1 { color: var(--primary); }
+.logo-letter.l1 { color: var(--secondary); }
+.logo-letter.e1 { color: var(--purple); }
+.logo-letter.x1 { color: var(--green); }
+.logo-letter.space { color: transparent; }
+.logo-letter.g1 { color: var(--pink); }
+.logo-letter.o1 { color: var(--cyan); }
+.logo-letter.dot { color: var(--accent); }
+
+/* ===== PARTICLE EXPLOSION ===== */
+.particle-explosion {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.explosion-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* ===== ENERGY RINGS ===== */
+.energy-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+.energy-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  border-radius: 50%;
+  opacity: 0;
+  animation: energyPulse 2s ease-out infinite;
+}
+
+.energy-ring:nth-child(1) {
+  border-color: var(--primary);
+  animation-delay: 0s;
+}
+
+.energy-ring:nth-child(2) {
+  border-color: var(--secondary);
+  animation-delay: 0.3s;
+}
+
+.energy-ring:nth-child(3) {
+  border-color: var(--purple);
+  animation-delay: 0.6s;
+}
+
+@keyframes energyPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* ===== GLITCH EFFECT ===== */
+.glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 107, 0, 0.03) 2px,
+    rgba(255, 107, 0, 0.03) 4px
+  );
+  opacity: 0;
+  animation: glitchScan 3s ease-in-out infinite;
+}
+
+@keyframes glitchScan {
+  0%, 90% { opacity: 0; }
+  95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ===== MATRIX RAIN ===== */
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.matrix-drop {
+  position: absolute;
+  color: var(--green);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  animation: matrixFall 3s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes matrixFall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.preloader-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px;
+  opacity: 0;
+}
+
+.loading-progress {
+  width: 400px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.loading-progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--purple), var(--green));
+  border-radius: 3px;
+  width: 0%;
+  animation: progressFill 4s ease-in-out forwards;
+}
+
+@keyframes progressFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.loading-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  opacity: 0;
+}
+
+/* ===== FLOATING ELEMENTS ===== */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: complexFloat 8s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+  background: var(--primary);
+  top: 20%; left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+  background: var(--secondary);
+  top: 60%; left: 80%;
+  animation-delay: 1s;
+}
+
+.floating-element:nth-child(3) {
+  background: var(--purple);
+  top: 80%; left: 20%;
+  animation-delay: 2s;
+}
+
+.floating-element:nth-child(4) {
+  background: var(--green);
+  top: 40%; left: 90%;
+  animation-delay: 3s;
+}
+
+.floating-element:nth-child(5) {
+  background: var(--pink);
+  top: 10%; left: 70%;
+  animation-delay: 4s;
+}
+
+@keyframes complexFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-30px) translateX(20px) rotate(90deg) scale(1.2);
+  }
+  50% {
+    transform: translateY(-60px) translateX(0px) rotate(180deg) scale(0.8);
+  }
+  75% {
+    transform: translateY(-30px) translateX(-20px) rotate(270deg) scale(1.1);
+  }
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.main-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 5%;
+  background: rgba(10, 10, 35, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.8s ease-out;
+}
+
+nav.show {
+  transform: translateY(0);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.01em;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--dark) 0%, #1a1a3e 50%, #2a2a4e 100%);
+  background-image: url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  filter: blur(0.5px);
+  mix-blend-mode: screen;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 900;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  margin-bottom: 50px;
+  opacity: 0.95;
+  font-weight: 300;
+  font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  line-height: 1.4;
+}
+
+.hero-subtitle::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 18px 50px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.hero-cta:hover::before {
+  left: 100%;
+}
+
+.hero-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 60px -12px rgba(255, 107, 0, 0.4);
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* ===== SCROLL INDICATOR ===== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--light);
+  opacity: 0.7;
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid var(--light);
+  border-radius: 12px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.scroll-wheel {
+  width: 3px;
+  height: 8px;
+  background: var(--light);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll-wheel 2s infinite;
+}
+
+@keyframes scroll-wheel {
+  0% { top: 6px; opacity: 1; }
+  50% { top: 16px; opacity: 0.5; }
+  100% { top: 6px; opacity: 1; }
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+  padding: 150px 5%;
+  background: linear-gradient(135deg, #1a1a3e 0%, var(--dark) 100%);
+  position: relative;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+  letter-spacing: -0.02em;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 0.1;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow);
+}
+
+.feature-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.01em;
+}
+
+.feature-desc {
+  opacity: 0.8;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== STATS SECTION ===== */
+.stats {
+  padding: 150px 5%;
+  background: var(--dark);
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 900;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services {
+  padding: 150px 5%;
+  background: linear-gradient(135deg, #2a2a4e 0%, var(--dark) 100%);
+  position: relative;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.service-item:nth-child(even) {
+  direction: rtl;
+}
+
+.service-item:nth-child(even) > * {
+  direction: ltr;
+}
+
+.service-content {
+  padding: 40px;
+}
+
+.service-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  margin-bottom: 30px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.service-desc {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.service-features {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+.service-features li {
+  padding: 10px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.service-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact {
+  padding: 150px 5%;
+  background: var(--dark);
+  position: relative;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--light);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--light);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 25px 50px -12px rgba(255, 107, 0, 0.4);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 60px 5%;
+  background: #050514;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.footer-text {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .service-item {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .contact-form {
+    padding: 40px 30px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .logo-container {
+    width: 90vw;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.scale-up {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.rotate-in {
+  opacity: 0;
+  transform: rotate(10deg) scale(0.9);
+}
+
+/* ===== CURSOR ===== */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 107, 0, 0.1);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.3s ease;
+}
+
+/* ===== PRELOADER HIDE ===== */
+.preloader.hide {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 1s ease-out;
+  pointer-events: none;
+}
+
+/* ===== SOUND WAVE ===== */
+.sound-wave {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 3px;
+  opacity: 0;
+}
+
+.wave-bar {
+  width: 4px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 2px;
+  animation: waveAnimation 1s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(1) { animation-delay: 0s; }
+.wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.wave-bar:nth-child(4) { animation-delay: 0.3s; }
+.wave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes waveAnimation {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+</style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <!-- Matrix Rain -->
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <!-- Glitch Overlay -->
+    <div class="glitch-overlay"></div>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+    </div>
+    
+    <!-- Energy Rings -->
+    <div class="energy-rings">
+      <div class="energy-ring"></div>
+      <div class="energy-ring"></div>
+      <div class="energy-ring"></div>
+    </div>
+    
+    <div class="preloader-content">
+      <!-- Logo Container -->
+      <div class="logo-container">
+        <div class="particle-explosion" id="particleExplosion"></div>
+        <span class="logo-letter f1">F</span>
+        <span class="logo-letter l1">L</span>
+        <span class="logo-letter e1">E</span>
+        <span class="logo-letter x1">X</span>
+        <span class="logo-letter space">&nbsp;</span>
+        <span class="logo-letter g1">G</span>
+        <span class="logo-letter o1">O</span>
+        <span class="logo-letter dot">.</span>
+      </div>
+      
+      <div class="preloader-subtitle">究極のアニメーション体験</div>
+      <div class="loading-progress"></div>
+      <div class="loading-text">Loading Amazing Experience...</div>
+      
+      <!-- Sound Wave -->
+      <div class="sound-wave">
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+        <div class="wave-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <!-- Navigation -->
+    <nav id="nav">
+      <div class="logo">FLEX GO.</div>
+      <div class="nav-links">
+        <a href="#hero">ホーム</a>
+        <a href="#features">特徴</a>
+        <a href="#services">サービス</a>
+        <a href="#contact">問い合わせ</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <video class="hero-video" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&q=80">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-urban-city-traffic-time-lapse-4984-large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-moving-through-a-modern-city-4993-large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-downtown-city-skyscrapers-4988-large.mp4" type="video/mp4">
+      </video>
+      
+      <div class="particles">
+        <!-- Particles will be generated by JavaScript -->
+      </div>
+      
+      <div class="hero-content">
+        <h1 class="hero-title">FLEX GO.</h1>
+        <p class="hero-subtitle">もっとフレキシブルにいこう。</p>
+        <a href="#contact" class="hero-cta">今すぐ依頼する</a>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>スクロール</span>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <h2 class="section-title fade-in">なぜ選ばれるのか</h2>
+      <div class="features-grid">
+        <div class="feature-card scale-up">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">超高速配送</h3>
+          <p class="feature-desc">最短60分で集荷。緊急時でも確実にお届けします。</p>
+        </div>
+        <div class="feature-card scale-up">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">30年無事故</h3>
+          <p class="feature-desc">安全第一の運転で、大切な荷物を確実に輸送します。</p>
+        </div>
+        <div class="feature-card scale-up">
+          <div class="feature-icon">📱</div>
+          <h3 class="feature-title">リアルタイム追跡</h3>
+          <p class="feature-desc">荷物の位置をリアルタイムで確認できます。</p>
+        </div>
+        <div class="feature-card scale-up">
+          <div class="feature-icon">🌍</div>
+          <h3 class="feature-title">全国ネットワーク</h3>
+          <p class="feature-desc">北海道から沖縄まで、全国どこでも対応可能。</p>
+        </div>
+        <div class="feature-card scale-up">
+          <div class="feature-icon">💰</div>
+          <h3 class="feature-title">明確な料金</h3>
+          <p class="feature-desc">追加料金なし。見積もり通りの安心価格。</p>
+        </div>
+        <div class="feature-card scale-up">
+          <div class="feature-icon">🔧</div>
+          <h3 class="feature-title">柔軟な対応</h3>
+          <p class="feature-desc">特殊な荷物や緊急便にも柔軟に対応します。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <h2 class="section-title fade-in">実績で証明</h2>
+      <div class="stats-grid">
+        <div class="stat-item scale-up">
+          <div class="stat-number" data-count="15000">0</div>
+          <div class="stat-label">総配送件数</div>
+        </div>
+        <div class="stat-item scale-up">
+          <div class="stat-number" data-count="99.9">0</div>
+          <div class="stat-label">配送成功率（%）</div>
+        </div>
+        <div class="stat-item scale-up">
+          <div class="stat-number" data-count="1200">0</div>
+          <div class="stat-label">最長距離（km）</div>
+        </div>
+        <div class="stat-item scale-up">
+          <div class="stat-number" data-count="24">0</div>
+          <div class="stat-label">24時間対応</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <h2 class="section-title fade-in">サービス</h2>
+      <div class="services-container">
+        <div class="service-item">
+          <div class="service-content slide-left">
+            <h3 class="service-title">スポット緊急便</h3>
+            <p class="service-desc">突然の配送依頼にも即座に対応。60分以内で集荷に伺います。</p>
+            <ul class="service-features">
+              <li>最短60分で集荷</li>
+              <li>24時間365日対応</li>
+              <li>緊急時特別料金なし</li>
+            </ul>
+          </div>
+          <img class="service-image slide-right" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="スポット緊急便">
+        </div>
+        
+        <div class="service-item">
+          <div class="service-content slide-right">
+            <h3 class="service-title">定期ルート便</h3>
+            <p class="service-desc">毎日の配送を効率化。コストを抑えながら確実な配送を実現。</p>
+            <ul class="service-features">
+              <li>固定ドライバー制</li>
+              <li>月額定額プラン</li>
+              <li>配送効率最適化</li>
+            </ul>
+          </div>
+          <img class="service-image slide-left" src="https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=800&q=80" alt="定期ルート便">
+        </div>
+        
+        <div class="service-item">
+          <div class="service-content slide-left">
+            <h3 class="service-title">長距離チャーター</h3>
+            <p class="service-desc">全国どこでも貸切輸送。大切な荷物を確実にお届けします。</p>
+            <ul class="service-features">
+              <li>全国対応</li>
+              <li>貸切専用車両</li>
+              <li>特殊荷物対応</li>
+            </ul>
+          </div>
+          <img class="service-image slide-right" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="長距離チャーター">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <h2 class="section-title fade-in">お問い合わせ</h2>
+        <form class="contact-form fade-in" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="message">ご依頼内容</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">送信する</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">FLEX GO.</div>
+        <p class="footer-text">© 2025 FLEX GO. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Matrix Rain Effect
+    function createMatrixRain() {
+      const matrixContainer = document.getElementById('matrixRain');
+      const matrixChars = '01FLEXGO.';
+      
+      for (let i = 0; i < 30; i++) {
+        const drop = document.createElement('div');
+        drop.className = 'matrix-drop';
+        drop.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+        drop.style.left = Math.random() * 100 + '%';
+        drop.style.animationDelay = Math.random() * 3 + 's';
+        drop.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        matrixContainer.appendChild(drop);
+      }
+    }
+
+    // Particle Explosion
+    function createParticleExplosion() {
+      const explosionContainer = document.getElementById('particleExplosion');
+      const colors = ['#FF6B00', '#00A8FF', '#8B5CF6', '#10B981', '#EC4899', '#06B6D4'];
+      
+      for (let i = 0; i < 100; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'explosion-particle';
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = '50%';
+        particle.style.top = '50%';
+        explosionContainer.appendChild(particle);
+      }
+    }
+
+    // Logo Assembly Animation
+    function animateLogoAssembly() {
+      const letters = document.querySelectorAll('.logo-letter');
+      const explosionParticles = document.querySelectorAll('.explosion-particle');
+      
+      // Timeline for the entire animation
+      const tl = gsap.timeline();
+      
+      // First: Particle explosion
+      tl.to(explosionParticles, {
+        duration: 1.5,
+        opacity: 1,
+        scale: gsap.utils.random(0.5, 2),
+        x: () => gsap.utils.random(-300, 300),
+        y: () => gsap.utils.random(-300, 300),
+        rotation: () => gsap.utils.random(0, 360),
+        ease: "power3.out",
+        stagger: {
+          amount: 0.5,
+          from: "center"
+        }
+      })
+      
+      // Letters flying in from different directions
+      .set(letters, {
+        opacity: 1,
+        scale: 0.3,
+        rotation: () => gsap.utils.random(-180, 180),
+        x: () => gsap.utils.random(-800, 800),
+        y: () => gsap.utils.random(-600, 600),
+        filter: "blur(5px)"
+      })
+      
+      // Letters assembly animation
+      .to(letters, {
+        duration: 2,
+        x: (index) => {
+          const positions = [-240, -144, -48, 48, 96, 144, 240, 288]; // Approximate positions
+          return positions[index] || 0;
+        },
+        y: 0,
+        rotation: 0,
+        scale: 1,
+        filter: "blur(0px)",
+        ease: "elastic.out(1, 0.8)",
+        stagger: {
+          amount: 0.8,
+          from: "start"
+        }
+      }, "-=0.5")
+      
+      // Final glow and shake effect
+      .to(letters, {
+        duration: 0.5,
+        textShadow: "0 0 40px currentColor",
+        scale: 1.1,
+        ease: "power2.out",
+        stagger: 0.1
+      })
+      
+      .to(letters, {
+        duration: 0.3,
+        scale: 1,
+        ease: "power2.out",
+        stagger: 0.05
+      })
+      
+      // Particle cleanup
+      .to(explosionParticles, {
+        duration: 1,
+        opacity: 0,
+        scale: 0,
+        ease: "power2.in"
+      }, "-=1");
+      
+      return tl;
+    }
+
+    // Preloader Logic
+    window.addEventListener('load', function() {
+      // Initialize effects
+      createMatrixRain();
+      createParticleExplosion();
+      
+      // Main timeline
+      const mainTimeline = gsap.timeline();
+      
+      // Animate subtitle and loading elements
+      mainTimeline
+        .to('.preloader-subtitle', {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out"
+        }, 0.5)
+        .to('.loading-text', {
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out"
+        }, 1)
+        .to('.sound-wave', {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power3.out"
+        }, 1.5)
+        
+        // Logo assembly animation
+        .add(animateLogoAssembly(), 2)
+        
+        // Final effects
+        .to('.energy-rings', {
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out"
+        }, 3.5)
+        
+        // Hide preloader
+        .to('.preloader', {
+          opacity: 0,
+          scale: 0.95,
+          duration: 1,
+          ease: "power3.inOut",
+          onComplete: () => {
+            document.getElementById('preloader').remove();
+            showMainContent();
+          }
+        }, 5);
+    });
+
+    // Show main content
+    function showMainContent() {
+      const mainContent = document.getElementById('mainContent');
+      const nav = document.getElementById('nav');
+      
+      mainContent.classList.add('show');
+      nav.classList.add('show');
+      
+      initializeMainAnimations();
+    }
+
+    // Initialize main animations
+    function initializeMainAnimations() {
+      // Custom cursor
+      const cursor = document.querySelector('.cursor');
+      const cursorFollower = document.querySelector('.cursor-follower');
+
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        cursorFollower.style.left = e.clientX + 'px';
+        cursorFollower.style.top = e.clientY + 'px';
+      });
+
+      // Particle system
+      function createParticles() {
+        const particlesContainer = document.querySelector('.particles');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.className = 'particle';
+          particle.style.left = Math.random() * 100 + '%';
+          particle.style.top = Math.random() * 100 + '%';
+          particle.style.animationDelay = Math.random() * 2 + 's';
+          particle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+          particlesContainer.appendChild(particle);
+
+          // Animate particles
+          gsap.to(particle, {
+            y: -100,
+            opacity: 0,
+            duration: Math.random() * 3 + 2,
+            repeat: -1,
+            ease: "none"
+          });
+        }
+      }
+
+      // Initialize particles
+      createParticles();
+
+      // Hero animations
+      gsap.timeline()
+        .from('.hero-title', { opacity: 0, y: 100, duration: 1.5, ease: "power3.out" })
+        .from('.hero-subtitle', { opacity: 0, y: 50, duration: 1.2, ease: "power3.out" }, "-=0.8")
+        .from('.hero-cta', { opacity: 0, y: 30, duration: 1, ease: "power3.out" }, "-=0.5")
+        .from('.scroll-indicator', { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=0.3");
+
+      // Scroll animations
+      gsap.utils.toArray('.fade-in').forEach(element => {
+        gsap.fromTo(element, 
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.slide-left').forEach(element => {
+        gsap.fromTo(element,
+          { opacity: 0, x: -100 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.slide-right').forEach(element => {
+        gsap.fromTo(element,
+          { opacity: 0, x: 100 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.scale-up').forEach(element => {
+        gsap.fromTo(element,
+          { opacity: 0, scale: 0.8 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      // Counter animation
+      gsap.utils.toArray('.stat-number').forEach(element => {
+        const target = parseInt(element.getAttribute('data-count'));
+        gsap.fromTo(element,
+          { innerHTML: 0 },
+          {
+            innerHTML: target,
+            duration: 2,
+            ease: "power2.out",
+            snap: { innerHTML: 1 },
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      // Parallax effect for hero video
+      gsap.to('.hero-video', {
+        yPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+          trigger: '.hero',
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: target,
+            ease: "power3.inOut"
+          });
+        }
+      });
+    });
+
+    // Form submission
+    function handleSubmit(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData);
+      
+      // Create mailto link
+      const subject = encodeURIComponent('FLEX GO. お問い合わせ');
+      const body = encodeURIComponent(
+        `お名前: ${data.name}\n` +
+        `メールアドレス: ${data.email}\n` +
+        `電話番号: ${data.phone}\n\n` +
+        `ご依頼内容:\n${data.message}`
+      );
+      
+      window.location.href = `mailto:flexgo.7983150@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Show success message
+      gsap.to('.submit-btn', {
+        backgroundColor: '#28a745',
+        innerHTML: '送信完了！',
+        duration: 0.3,
+        ease: "power2.out"
+      });
+      
+      setTimeout(() => {
+        gsap.to('.submit-btn', {
+          backgroundColor: '',
+          innerHTML: '送信する',
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      }, 2000);
+      
+      return false;
+    }
+
+    // Interactive hover effects
+    document.querySelectorAll('.feature-card, .service-item, .stat-item').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        gsap.to(item, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        gsap.to(item, {
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+    });
+  </script>
+</body>
+</html>
