@@ -1,447 +1,222 @@
+<!--
+FLEX GO. Brutalist LP
+Concept: Raw, bold, and direct. Black and white with a single accent color.
+Tech: Vanilla JS, CSS Grid, Google Fonts, Feather Icons.
+Performance: Single file, lazy loading, aiming for Lighthouse >90.
+-->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLEX-GO | Luxury Transport</title>
+    <title>FLEX GO. - Brutalist Freight</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Noto+Sans+JP:wght@400&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --forest: #0B2C17;
-            --gold: #B49C70;
-            --white: #FFFFFF;
+            --black: #000000; --white: #FFFFFF; --accent: #FF6B00;
+            --font-heading: "Anton", sans-serif; --font-body: "Inter", sans-serif;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; background-color: var(--white); }
         body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background: var(--forest);
-            color: var(--white);
-            overflow-x: hidden;
-            line-height: 1.4;
+            background-color: var(--white); color: var(--black);
+            font-family: var(--font-body); font-size: 1rem; line-height: 1.4;
+            padding: 32px;
+            -webkit-font-smoothing: antialiased;
         }
-        
         .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 48px;
+            border: 2px solid var(--black);
         }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            position: relative;
+        .dark-bg { background-color: var(--black); color: var(--white); }
+        .dotted-bg {
+            background-image: radial-gradient(var(--black) 1px, transparent 0);
+            background-size: 10px 10px;
+        }
+        h1, h2, h3 { font-family: var(--font-heading); letter-spacing: -1px; }
+        h2 { font-size: 8vw; }
+        section {
+            min-height: 100vh; display: grid; grid-template-columns: repeat(12, 1fr);
+            border-bottom: 2px solid var(--black); padding: 32px;
+        }
+        .header {
+            position: sticky; top: 0; z-index: 10;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 32px; border-bottom: 2px solid var(--black);
+            background-color: var(--white);
+        }
+        .header-logo { font-family: var(--font-heading); font-size: 2rem; text-decoration: none; color: var(--black); }
+        .header-nav a { margin-left: 24px; text-decoration: none; color: var(--black); font-weight: bold; }
+        #hero {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--forest) 0%, #1a4829 100%);
-            overflow: hidden;
         }
-        
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            mix-blend-mode: multiply;
-            opacity: 0.4;
-            z-index: 1;
+        #hero h2 {
+            writing-mode: vertical-rl;
+            animation: spinToHorizontal 3s linear 1 forwards;
+            font-size: 15vw;
+            transform-origin: center;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(11, 44, 23, 0.7), rgba(11, 44, 23, 0.5));
-            z-index: 1;
+        @keyframes spinToHorizontal {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-90deg); }
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1.05); }
-            50% { transform: translateY(-20px) scale(1.1); }
+        #reason { grid-gap: 32px; align-content: center; }
+        .reason-card {
+            grid-column: span 6; border: 2px solid var(--black); padding: 24px;
+            transition: border-color 0.1s linear;
         }
-        
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            color: var(--white);
-            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            margin-bottom: 1rem;
-            letter-spacing: -2px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .cta-btn {
-            background: linear-gradient(45deg, var(--gold), #d4b876);
-            color: var(--forest);
-            padding: 16px 32px;
-            border: none;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 32px rgba(180, 156, 112, 0.3);
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(180, 156, 112, 0.4);
-        }
-        
-        /* Golden Logo */
-        .golden-logo {
-            position: fixed;
-            top: 48px;
-            left: 48px;
-            z-index: 100;
-            opacity: 0;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 120px 0;
-            background: linear-gradient(180deg, var(--forest) 0%, #0a2416 100%);
-            clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
-            margin-top: -80px;
-            position: relative;
-        }
-        
-        .services h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            text-align: center;
-            margin-bottom: 80px;
-            color: var(--gold);
-        }
-        
-        .service-grid {
+        .reason-card:hover { border-color: var(--accent); }
+        #stats { align-content: center; text-align: center; }
+        .stat-item { grid-column: span 4; }
+        .stat-number { font-family: var(--font-heading); font-size: 10vw; }
+        #gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 48px;
-            margin-top: 60px;
+            grid-template-columns: 1fr;
+            border-bottom: 2px solid var(--black);
         }
-        
-        .service-card {
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(180, 156, 112, 0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+        .gallery-img {
+            width: 100%; height: 100vh; object-fit: cover;
+            clip-path: inset(100% 0 0 0); transition: clip-path 1s ease-in-out;
         }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 60px rgba(180, 156, 112, 0.1);
+        .gallery-img.in-view {
+            clip-path: inset(0 0 0 0);
         }
-        
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 16px;
+        #contact { align-content: center; }
+        .contact-form { grid-column: 4 / span 6; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { display: block; margin-bottom: 0.5rem; }
+        .form-input {
+            width: 100%; padding: 0.75rem; border: 2px solid var(--black);
+            background-color: var(--white); color: var(--black); font-size: 1rem;
         }
-        
-        .service-card p {
-            opacity: 0.8;
-            line-height: 1.6;
+        .form-input:focus {
+            outline: none; background-color: var(--black); color: var(--white);
         }
-        
-        /* About Section */
-        .about {
-            padding: 120px 0;
-            background: linear-gradient(45deg, #0a2416 0%, var(--forest) 100%);
-            clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
-            margin-top: -80px;
+        .submit-btn {
+            width: 100%; padding: 1rem; border: 2px solid var(--black);
+            background-color: var(--black); color: var(--white); font-size: 1.2rem;
+            cursor: pointer; transition: background-color 0.2s, color 0.2s;
         }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .about h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--gold);
-            margin-bottom: 32px;
-        }
-        
-        .about p {
-            opacity: 0.9;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-        
-        .about-image {
-            height: 400px;
-            background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop&ixlib=rb-4.0.3');
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 120px 0;
-            background: var(--forest);
-            text-align: center;
-        }
-        
-        .contact h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--gold);
-            margin-bottom: 48px;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 48px;
-            margin-top: 60px;
-        }
-        
-        .contact-item {
+        .submit-btn:hover { background-color: var(--white); color: var(--black); }
+        .footer {
+            display: flex; justify-content: space-between; align-items: center;
             padding: 32px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            border: 1px solid rgba(180, 156, 112, 0.2);
         }
-        
-        .contact-item h3 {
-            color: var(--gold);
-            margin-bottom: 16px;
-            font-family: 'Playfair Display', serif;
+        .footer-socials a {
+            margin-left: 16px; display: inline-block;
+            transition: transform 0.2s ease-out;
         }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container { padding: 0 24px; }
-            .golden-logo { left: 24px; top: 24px; }
-            .about-content { grid-template-columns: 1fr; gap: 48px; }
-            .service-grid { gap: 32px; }
-            .contact-info { gap: 32px; }
-        }
-        
-        /* Grain texture */
-        .grain::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch"/></filter></defs><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.03"/></svg>');
-            pointer-events: none;
-            z-index: 1000;
-        }
+        .footer-socials a:hover { transform: translateY(-10px); }
     </style>
 </head>
-<body class="grain">
-    <!-- Golden Logo -->
-    <div class="golden-logo">FLEX-GO</div>
+<body>
+<div class="container">
+    <header class="header">
+        <a href="#" class="header-logo" aria-label="FLEX GO. Homepage">FLEX GO.</a>
+        <nav class="header-nav" aria-label="Main Navigation">
+            <a href="#reason">Reason</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_30fps.mp4" type="video/mp4">
-            <source src="https://videos.pexels.com/video-files/2022395/2022395-uhd_2560_1440_30fps.mp4" type="video/mp4">
-        </video>
-        <div class="hero-content">
-            <h1>FLEX-GO</h1>
-            <p>極上のラグジュアリー輸送体験を、あなたの元へ</p>
-            <a href="#services" class="cta-btn">サービスを見る</a>
+    <main>
+        <section id="hero" class="dark-bg dotted-bg">
+            <h2 aria-label="FLEX GO.">FLEX&nbsp;GO.</h2>
+        </section>
+
+        <section id="reason">
+            <div class="reason-card"><h3>30年無事故</h3><p>創業以来、安全は我々の最優先事項。信頼と実績がここにあります。</p></div>
+            <div class="reason-card"><h3>24H/365D対応</h3><p>いつでも、どこへでも。お客様のビジネスを止めません。</p></div>
+            <div class="reason-card"><h3>全国ネットワーク</h3><p>日本全国を網羅する配送網で、あらゆるニーズに応えます。</p></div>
+            <div class="reason-card"><h3>柔軟な料金体系</h3><p>無駄を削ぎ落とし、お客様に最適なプランを提案します。</p></div>
+        </section>
+
+        <section id="stats" class="dark-bg">
+            <div class="stat-item"><div class="stat-number" data-target="120">0</div><p>年間契約社数</p></div>
+            <div class="stat-item"><div class="stat-number" data-target="1200">0</div><p>月間配送件数</p></div>
+            <div class="stat-item"><div class="stat-number" data-target="3">0</div><p>営業日以内見積</p></div>
+        </section>
+
+        <div id="gallery">
+            <img src="https://images.unsplash.com/photo-1576156649339-4a9b674a5946?q=80&w=2070"
+                 alt="広大な工業用倉庫の内部" class="gallery-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1586436482429-34a24592c23a?q=80&w=2070"
+                 alt="都市の通りに駐車された白い配送バン" class="gallery-img" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1605711217217-65b647a27609?q=80&w=2070"
+                 alt="コンテナが積み上げられた貨物港" class="gallery-img" loading="lazy">
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Premium Services</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <h3>定期ルート便</h3>
-                    <p>決まったルートを定期的に運行する、安定したプレミアム輸送サービス。お客様のビジネスリズムに合わせた最適なソリューションを提供いたします。</p>
+        <section id="contact">
+            <form class="contact-form" action="#" method="POST">
+                <h2>CONTACT</h2>
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
                 </div>
-                <div class="service-card">
-                    <h3>スポット緊急便</h3>
-                    <p>急な輸送ニーズにも即座に対応。24時間体制でお客様の緊急要請にお応えし、最高品質のサービスをお約束いたします。</p>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
                 </div>
-                <div class="service-card">
-                    <h3>長距離チャーター</h3>
-                    <p>全国どこでも、専用車両でのラグジュアリーな長距離輸送。お客様だけのプライベート空間で、快適な移動時間をお過ごしください。</p>
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" rows="4" class="form-input" required></textarea>
                 </div>
-            </div>
+                <button type="submit" class="submit-btn">SEND</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer dark-bg">
+        <p>&copy; 2025 FLEX GO.</p>
+        <div class="footer-socials">
+            <a href="#" aria-label="X"><i data-feather="twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i data-feather="send"></i></a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div>
-                    <h2>About FLEX-GO</h2>
-                    <p>私たちFLEX-GOは、輸送業界に新しい風を吹き込む革新的なサービスを提供しています。</p>
-                    <p>お客様一人ひとりのニーズに合わせたオーダーメイドの輸送ソリューションで、これまでにないラグジュアリーな体験をお届けします。</p>
-                    <p>最新のテクノロジーと伝統的なおもてなしの心を融合させ、輸送を単なる移動手段から、特別な時間へと昇華させます。</p>
-                </div>
-                <div class="about-image"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>お電話でのお問い合わせ</h3>
-                    <p>0120-FLEX-GO<br>（平日 9:00-18:00）</p>
-                </div>
-                <div class="contact-item">
-                    <h3>メールでのお問い合わせ</h3>
-                    <p>contact@flex-go.jp<br>24時間受付中</p>
-                </div>
-                <div class="contact-item">
-                    <h3>オンライン予約</h3>
-                    <p>専用フォームからお気軽に<br>お問い合わせください</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    </footer>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script>
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Golden logo fade in on scroll
-        gsap.to('.golden-logo', {
-            opacity: 1,
-            duration: 1,
-            scrollTrigger: {
-                trigger: 'body',
-                start: 'top -30%',
-                end: 'bottom bottom',
-                toggleActions: 'play none none reverse'
-            }
-        });
-        
-        // Service cards animation
-        gsap.from('.service-card', {
-            y: 60,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: '.services',
-                start: 'top 80%',
-                end: 'bottom 20%'
-            }
-        });
-        
-        // About section animation
-        gsap.from('.about h2', {
-            x: -100,
-            opacity: 0,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.about',
-                start: 'top 80%'
-            }
-        });
-        
-        gsap.from('.about p', {
-            x: -50,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.1,
-            delay: 0.3,
-            scrollTrigger: {
-                trigger: '.about',
-                start: 'top 80%'
-            }
-        });
-        
-        gsap.from('.about-image', {
-            x: 100,
-            opacity: 0,
-            duration: 1,
-            delay: 0.5,
-            scrollTrigger: {
-                trigger: '.about',
-                start: 'top 80%'
-            }
-        });
-        
-        // Contact section animation
-        gsap.from('.contact-item', {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            scrollTrigger: {
-                trigger: '.contact',
-                start: 'top 80%'
-            }
-        });
-        
-        // Smooth scroll for CTA button
-        document.querySelector('.cta-btn').addEventListener('click', (e) => {
-            e.preventDefault();
-            gsap.to(window, {
-                duration: 1.5,
-                scrollTo: '#services',
-                ease: 'power2.inOut'
+        feather.replace({ 'stroke-width': 2, width: 24, height: 24 });
+
+        const countUp = (el) => {
+            const target = +el.dataset.target;
+            let count = 0;
+            const interval = setInterval(() => {
+                const step = Math.ceil(target / 50);
+                count += step;
+                if (count >= target) {
+                    el.innerText = target;
+                    clearInterval(interval);
+                } else {
+                    el.innerText = count;
+                }
+            }, 40);
+        };
+
+        const galleryObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
             });
-        });
-        
-        // Parallax effect for hero video
-        gsap.to('.hero-video', {
-            yPercent: -30,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-            }
-        });
+        }, { threshold: 0.2 });
+
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.stat-number').forEach(countUp);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.8 });
+
+        document.querySelectorAll('.gallery-img').forEach(img => galleryObserver.observe(img));
+        statsObserver.observe(document.querySelector('#stats'));
     </script>
 </body>
 </html>
