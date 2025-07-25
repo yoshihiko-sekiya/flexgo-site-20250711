@@ -83,87 +83,56 @@ gap:3rem;font-size:1.5rem;z-index:1000;transition:right 0.3s ease}
 .nav-links.active li:nth-child(2){transition-delay:0.2s}
 .nav-links.active li:nth-child(3){transition-delay:0.3s}
 /* Loading Screen Styles */
-.loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:linear-gradient(135deg,#FF6B00 0%,#FF8533 50%,#0A0A23 100%);display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out}
+.loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:linear-gradient(135deg,var(--bg) 0%,rgba(255,107,0,0.1) 100%);display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out}
 .loading-screen.fade-out{opacity:0;pointer-events:none}
-.loading-bg{position:relative;width:100%;height:100%;overflow:hidden}
-.road{position:absolute;bottom:0;width:100%;height:120px;background:linear-gradient(to bottom,#333 0%,#222 100%);border-top:4px solid #555}
-.road-lines{position:absolute;top:50%;left:0;width:200%;height:4px;background:repeating-linear-gradient(to right,transparent 0,transparent 20px,#FFD700 20px,#FFD700 40px);animation:roadMove 2s linear infinite}
-@keyframes roadMove{0%{transform:translateX(0)}100%{transform:translateX(-40px)}}
-.van-container{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:vanBounce 1.5s ease-in-out infinite}
-@keyframes vanBounce{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-10px)}}
-.delivery-van{position:relative;width:120px;height:70px;animation:vanColorShift 3s ease-in-out infinite}
-@keyframes vanColorShift{0%,100%{filter:hue-rotate(0deg)}33%{filter:hue-rotate(120deg)}66%{filter:hue-rotate(240deg)}}
-.van-body{position:absolute;bottom:0;left:0;width:80px;height:40px;background:#FF6B00;border-radius:8px 8px 4px 4px;box-shadow:inset 0 -5px 10px rgba(0,0,0,0.2)}
-.van-cabin{position:absolute;bottom:30px;left:60px;width:40px;height:30px;background:#FF8533;border-radius:8px 8px 0 0;box-shadow:inset 0 -3px 6px rgba(0,0,0,0.2)}
-.van-cabin::before{content:'';position:absolute;top:5px;left:5px;width:30px;height:15px;background:rgba(255,255,255,0.3);border-radius:4px}
-.van-wheel{position:absolute;width:20px;height:20px;background:#333;border:3px solid #666;border-radius:50%;animation:wheelSpin 0.5s linear infinite}
+.loading-container{display:flex;flex-direction:column;align-items:center;gap:3rem;text-align:center}
+.van-container{animation:vanFloat 2s ease-in-out infinite}
+@keyframes vanFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+.delivery-van{position:relative;width:100px;height:60px;animation:vanColorShift 4s ease-in-out infinite}
+@keyframes vanColorShift{0%,100%{filter:hue-rotate(0deg)}25%{filter:hue-rotate(90deg)}50%{filter:hue-rotate(180deg)}75%{filter:hue-rotate(270deg)}}
+.van-body{position:absolute;bottom:10px;left:10px;width:60px;height:30px;background:var(--accent);border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+.van-cabin{position:absolute;bottom:25px;right:10px;width:25px;height:25px;background:var(--accent);border-radius:6px 6px 0 0;filter:brightness(1.1)}
+.van-cabin::before{content:'';position:absolute;top:3px;left:3px;width:19px;height:12px;background:rgba(255,255,255,0.4);border-radius:2px}
+.van-wheel{position:absolute;width:16px;height:16px;background:#2c2c2c;border:2px solid #555;border-radius:50%;animation:wheelSpin 1s linear infinite}
 @keyframes wheelSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.van-wheel-front{bottom:-10px;right:15px}
-.van-wheel-rear{bottom:-10px;left:15px}
-.van-logo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:white;font-weight:700;font-size:12px;text-shadow:1px 1px 2px rgba(0,0,0,0.5)}
-.clouds{position:absolute;top:0;width:100%;height:100%}
-.cloud{position:absolute;background:rgba(255,255,255,0.8);border-radius:50px;opacity:0.7}
-.cloud::before,.cloud::after{content:'';position:absolute;background:rgba(255,255,255,0.8);border-radius:50px}
-.cloud1{width:60px;height:30px;top:20%;left:10%;animation:cloudMove1 8s linear infinite}
-.cloud1::before{width:40px;height:40px;top:-20px;left:10px}
-.cloud1::after{width:30px;height:25px;top:-10px;right:-10px}
-.cloud2{width:80px;height:40px;top:15%;right:20%;animation:cloudMove2 10s linear infinite}
-.cloud2::before{width:50px;height:50px;top:-25px;left:15px}
-.cloud2::after{width:40px;height:30px;top:-15px;right:-15px}
-.cloud3{width:50px;height:25px;top:30%;left:70%;animation:cloudMove3 12s linear infinite}
-.cloud3::before{width:35px;height:35px;top:-15px;left:8px}
-.cloud3::after{width:25px;height:20px;top:-8px;right:-8px}
-@keyframes cloudMove1{0%{transform:translateX(-100px)}100%{transform:translateX(calc(100vw + 100px))}}
-@keyframes cloudMove2{0%{transform:translateX(-100px)}100%{transform:translateX(calc(100vw + 100px))}}
-@keyframes cloudMove3{0%{transform:translateX(-100px)}100%{transform:translateX(calc(100vw + 100px))}}
-.loading-text{position:absolute;bottom:30%;left:50%;transform:translateX(-50%);text-align:center;color:white;text-shadow:2px 2px 4px rgba(0,0,0,0.5)}
-.loading-text h2{font-size:2rem;margin-bottom:1rem;animation:textPulse 2s ease-in-out infinite}
-@keyframes textPulse{0%,100%{opacity:1}50%{opacity:0.7}}
-.loading-dots{display:flex;gap:8px;justify-content:center}
-.loading-dots span{width:12px;height:12px;background:white;border-radius:50%;animation:dotBounce 1.4s ease-in-out infinite both}
-.loading-dots span:nth-child(1){animation-delay:0s}
-.loading-dots span:nth-child(2){animation-delay:0.2s}
-.loading-dots span:nth-child(3){animation-delay:0.4s}
-@keyframes dotBounce{0%,80%,100%{transform:scale(0.8)}40%{transform:scale(1.2)}}
+.van-wheel-front{bottom:2px;right:8px}
+.van-wheel-rear{bottom:2px;left:20px}
+.loading-text{color:var(--txt)}
+.loading-text h1{font-size:3rem;font-weight:700;color:var(--accent);margin-bottom:0.5rem;animation:logoGlow 2s ease-in-out infinite}
+@keyframes logoGlow{0%,100%{text-shadow:0 0 10px rgba(255,107,0,0.3)}50%{text-shadow:0 0 20px rgba(255,107,0,0.6),0 0 30px rgba(255,107,0,0.3)}}
+.loading-text p{font-size:1.2rem;margin-bottom:2rem;opacity:0.8}
+.loading-progress{width:200px;height:4px;background:rgba(255,107,0,0.2);border-radius:2px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),#FF8533);border-radius:2px;animation:progressFill 5s ease-out forwards}
+@keyframes progressFill{0%{width:0;transform:translateX(-100%)}100%{width:100%;transform:translateX(0)}}
 .main-content{opacity:0;transition:opacity 1s ease-in}
 .main-content.show{opacity:1}
 @media(max-width:768px){
 .hero h1{font-size:2.5rem}
 .service-grid{grid-template-columns:1fr}
 .stats-grid{grid-template-columns:1fr}
-.delivery-van{width:80px;height:50px}
-.van-body{width:60px;height:30px}
-.van-cabin{width:30px;height:20px;left:45px;bottom:22px}
-.van-wheel{width:15px;height:15px}
-.loading-text h2{font-size:1.5rem}
+.loading-text h1{font-size:2.5rem}
+.loading-text p{font-size:1rem}
+.loading-progress{width:150px}
 }
 </style>
 </head>
 <body>
 <!-- Loading Screen -->
 <div id="loading-screen" class="loading-screen">
-<div class="loading-bg">
-<div class="road">
-<div class="road-lines"></div>
-</div>
+<div class="loading-container">
 <div class="van-container">
 <div class="delivery-van">
 <div class="van-body"></div>
 <div class="van-cabin"></div>
 <div class="van-wheel van-wheel-front"></div>
 <div class="van-wheel van-wheel-rear"></div>
-<div class="van-logo">FLEX GO.</div>
 </div>
-</div>
-<div class="clouds">
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-<div class="cloud cloud3"></div>
 </div>
 <div class="loading-text">
-<h2>配送準備中...</h2>
-<div class="loading-dots">
-<span></span><span></span><span></span>
+<h1>FLEX GO.</h1>
+<p>配送準備中...</p>
+<div class="loading-progress">
+<div class="progress-bar"></div>
 </div>
 </div>
 </div>
