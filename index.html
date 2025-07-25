@@ -83,27 +83,27 @@ gap:3rem;font-size:1.5rem;z-index:1000;transition:right 0.3s ease}
 .nav-links.active li:nth-child(2){transition-delay:0.2s}
 .nav-links.active li:nth-child(3){transition-delay:0.3s}
 /* Loading Screen Styles */
-.loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:linear-gradient(135deg,var(--bg) 0%,rgba(255,107,0,0.1) 100%);display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out}
+.loading-screen{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;transition:opacity 1s ease-out}
 .loading-screen.fade-out{opacity:0;pointer-events:none}
-.loading-container{display:flex;flex-direction:column;align-items:center;gap:3rem;text-align:center}
+.loading-container{display:flex;flex-direction:column;align-items:center;gap:2.5rem;text-align:center}
 .van-container{animation:vanFloat 2s ease-in-out infinite}
-@keyframes vanFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-.delivery-van{position:relative;width:120px;height:70px}
-.van-main-body{position:absolute;bottom:12px;left:0;width:120px;height:45px;background:var(--accent);border-radius:8px 2px 2px 8px;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-.van-front-grille{position:absolute;bottom:20px;right:0;width:8px;height:30px;background:linear-gradient(to bottom,#444 0%,#666 50%,#444 100%);border-radius:0 2px 2px 0}
-.van-window-front{position:absolute;bottom:35px;right:8px;width:25px;height:20px;background:rgba(135,206,235,0.7);border:2px solid #333;border-radius:2px 2px 0 0}
-.van-window-side{position:absolute;bottom:35px;left:20px;width:35px;height:20px;background:rgba(135,206,235,0.6);border:2px solid #333;border-radius:2px}
-.van-door-handle{position:absolute;bottom:28px;left:65px;width:3px;height:8px;background:#333;border-radius:2px}
-.van-wheel{position:absolute;width:16px;height:16px;background:#2c2c2c;border:2px solid #555;border-radius:50%;animation:wheelSpin 1s linear infinite}
+@keyframes vanFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.delivery-van{position:relative;width:80px;height:50px}
+.van-main-body{position:absolute;bottom:8px;left:0;width:80px;height:32px;background:#666;border-radius:6px 2px 2px 6px;box-shadow:0 3px 10px rgba(0,0,0,0.4)}
+.van-front-grille{position:absolute;bottom:15px;right:0;width:6px;height:22px;background:linear-gradient(to bottom,#333 0%,#555 50%,#333 100%);border-radius:0 2px 2px 0}
+.van-window-front{position:absolute;bottom:25px;right:6px;width:18px;height:15px;background:#888;border:1px solid #222;border-radius:2px 2px 0 0}
+.van-window-side{position:absolute;bottom:25px;left:15px;width:25px;height:15px;background:#888;border:1px solid #222;border-radius:2px}
+.van-door-handle{position:absolute;bottom:20px;left:45px;width:2px;height:6px;background:#222;border-radius:1px}
+.van-wheel{position:absolute;width:12px;height:12px;background:#333;border:2px solid #555;border-radius:50%;animation:wheelSpin 1s linear infinite}
 @keyframes wheelSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-.van-wheel-front{bottom:2px;right:8px}
-.van-wheel-rear{bottom:2px;left:20px}
-.loading-text{color:var(--txt)}
-.loading-text h1{font-size:3rem;font-weight:700;color:var(--accent);margin-bottom:0.5rem;animation:logoGlow 2s ease-in-out infinite}
-@keyframes logoGlow{0%,100%{text-shadow:0 0 10px rgba(255,107,0,0.3)}50%{text-shadow:0 0 20px rgba(255,107,0,0.6),0 0 30px rgba(255,107,0,0.3)}}
-.loading-text p{font-size:1.2rem;margin-bottom:2rem;opacity:0.8}
-.loading-progress{width:200px;height:4px;background:rgba(255,107,0,0.2);border-radius:2px;overflow:hidden}
-.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),#FF8533);border-radius:2px;animation:progressFill 5s ease-out forwards}
+.van-wheel-front{bottom:2px;right:6px}
+.van-wheel-rear{bottom:2px;left:15px}
+.loading-text{color:#f0f0f0}
+.loading-text h1{font-size:2.5rem;font-weight:700;color:#ffffff;margin-bottom:0.5rem;animation:logoGlow 2s ease-in-out infinite}
+@keyframes logoGlow{0%,100%{text-shadow:0 0 10px rgba(255,255,255,0.3)}50%{text-shadow:0 0 20px rgba(255,255,255,0.5),0 0 30px rgba(255,255,255,0.2)}}
+.loading-text p{font-size:1rem;margin-bottom:1.5rem;opacity:0.7;color:#cccccc}
+.loading-progress{width:180px;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,#ffffff,#cccccc);border-radius:2px;animation:progressFill 5s ease-out forwards}
 @keyframes progressFill{0%{width:0;transform:translateX(-100%)}100%{width:100%;transform:translateX(0)}}
 .main-content{opacity:0;transition:opacity 1s ease-in}
 .main-content.show{opacity:1}
@@ -111,9 +111,10 @@ gap:3rem;font-size:1.5rem;z-index:1000;transition:right 0.3s ease}
 .hero h1{font-size:2.5rem}
 .service-grid{grid-template-columns:1fr}
 .stats-grid{grid-template-columns:1fr}
-.loading-text h1{font-size:2.5rem}
-.loading-text p{font-size:1rem}
-.loading-progress{width:150px}
+.loading-text h1{font-size:2rem}
+.loading-text p{font-size:0.9rem}
+.loading-progress{width:140px}
+.loading-container{gap:2rem}
 }
 </style>
 </head>
