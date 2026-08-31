@@ -1,5 +1,10 @@
 # FLEX GO Landing Page - Quick Access
 
+## 報告ルール
+
+ユーザーへの報告・質問・完了メッセージは、必ず冒頭に【FLEX GO. サイト】を
+付ける。複数プロジェクトを並行しているため、どの話か一目でわかるようにする。
+
 ## 🚀 Quick Commands
 
 ### Development
